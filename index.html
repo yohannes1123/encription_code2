@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoCipher - Encryption/Decryption Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="s.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Crypto<span>Cipher</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#mono">Monoalphabetic</a></li>
+                    <li><a href="#poly">Polyalphabetic</a></li>
+                    <li><a href="#transpose">Transposition</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Welcome to CryptoCipher</h2>
+            <p>A comprehensive tool for encrypting and decrypting messages using various classical cipher techniques.</p>
+            <div class="cipher-selector">
+                <label for="cipher-type">Select Cipher Type:</label>
+                <select id="cipher-type">
+                    <option value="">-- Select Cipher --</option>
+                    <optgroup label="Monoalphabetic Ciphers">
+                        <option value="additive">Additive (Caesar)</option>
+                        <option value="multiplicative">Multiplicative</option>
+                        <option value="affine">Affine</option>
+                    </optgroup>
+                    <optgroup label="Polyalphabetic Ciphers">
+                        <option value="vigenere">Vigenère</option>
+                        <option value="playfair">Playfair</option>
+                        <option value="hill">Hill</option>
+                        <option value="vernam">Vernam (One-time Pad)</option>
+                    </optgroup>
+                    <optgroup label="Transposition Ciphers">
+                        <option value="railfence">Rail Fence</option>
+                        <option value="route">Route</option>
+                        <option value="columnar">Columnar</option>
+                        <option value="double">Double</option>
+                        <option value="myszkowski">Myszkowski</option>
+                        <option value="disruptive">Disruptive Columnar</option>
+                    </optgroup>
+                </select>
+            </div>
+        </section>
+
+        <section class="cipher-section" id="input-section">
+            <div class="input-group">
+                <label for="plaintext">Input Text:</label>
+                <textarea id="plaintext" placeholder="Enter text to encrypt/decrypt"></textarea>
+            </div>
+
+            <div class="options-group" id="cipher-options">
+                <!-- Dynamic options will be inserted here based on cipher selection -->
+            </div>
+
+            <div class="action-buttons">
+                <button id="encrypt-btn">Encrypt <i class="fas fa-lock"></i></button>
+                <button id="decrypt-btn">Decrypt <i class="fas fa-unlock"></i></button>
+                <button id="clear-btn">Clear <i class="fas fa-trash"></i></button>
+            </div>
+
+            <div class="result-group">
+                <label for="result">Result:</label>
+                <textarea id="result" readonly></textarea>
+                <button id="copy-btn">Copy Result <i class="fas fa-copy"></i></button>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="info-tabs">
+                <button class="tab-btn active" data-tab="about">About</button>
+                <button class="tab-btn" data-tab="how-it-works">How It Works</button>
+                <button class="tab-btn" data-tab="history">History</button>
+            </div>
+            <div class="info-content">
+                <div class="tab-content active" id="about">
+                    <h3>About CryptoCipher</h3>
+                    <p>This tool provides implementations of various classical cipher algorithms used in cryptography. You can encrypt and decrypt messages using different techniques from simple Caesar cipher to more complex polyalphabetic and transposition ciphers.</p>
+                </div>
+                <div class="tab-content" id="how-it-works">
+                    <h3>How These Ciphers Work</h3>
+                    <p>Each cipher uses a different mathematical approach to transform plaintext into ciphertext:</p>
+                    <ul>
+                        <li><strong>Monoalphabetic:</strong> Simple substitution of each letter with another</li>
+                        <li><strong>Polyalphabetic:</strong> Uses multiple substitution alphabets</li>
+                        <li><strong>Transposition:</strong> Rearranges the letters of the plaintext</li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="history">
+                    <h3>Historical Significance</h3>
+                    <p>These ciphers have been used throughout history for military and diplomatic communications. While many are now considered insecure for modern applications, they form the foundation of modern cryptography.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 CryptoCipher. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="j.js"></script>
+</body>
+</html>
